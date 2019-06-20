@@ -54,7 +54,7 @@
                       @foreach ($beers as $beer)
                       <tr>
                         <td>{{$beer->id}}</td>
-                        <td><a href="/informacao/{{ $beer->id }}">{{$beer->name}}</td> </a>
+                        <td><a href="/beer/{{ $beer->id }}">{{$beer->name}}</td> </a>
                         <td>{{$beer->description}}</td>
                       </tr>
                       @endforeach

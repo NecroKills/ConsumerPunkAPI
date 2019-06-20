@@ -43,7 +43,7 @@ class PunkController extends Controller
     public function show($id)
     {
       $beer = $this->beers->find($id);
-      return view('informacao', compact('beer'));
+      return view('beer', compact('beer'));
     }
 
 }
