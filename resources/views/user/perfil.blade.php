@@ -2,12 +2,11 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <div class="panel panel-default">
           <div class="panel-heading">Meu Perfil: {{ Auth::user()->name }}</div>
+          <form class="" action="{{route('user.update', $registro->id)}}" method="post">
             <div class="panel-body">
-              <form class="" action="{{route('user.update', $registro->id)}}" method="post">
                 {{ csrf_field() }}
                 <input type="hidden" name="_method" value="put">
                 <div class="row">
@@ -36,20 +35,28 @@
                     </div>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <button type="submit" class="btn btn-primary">
-                      Atualizar
-                  </div>
-                </form>
-                  <div class="col-md-6">
-                    <button type="button" id="voltar" class="btn btn-primary">
-                      <i class="fas fa-arrow-left font-color-footer"></i>Voltar</button>
-                    </div>
+                <!-- Footer - Botões -->
+            </div>
+            <div class="panel-footer">
+              <div class="row">
+                <div class="col-md-2" id="primeiro">
+                  <button type="submit" class="btn btn-success">Atualizar</button>
                 </div>
+              </form>
+              <div class="col-md-10" id="ultimo">
+                <button type="button" id="voltar" class="btn btn-primary">
+                  <i class="fas fa-arrow-left font-color-footer"></i>Voltar</button>
+                </div>
+              </div>
             </div>
         </div>
       </div>
-    </div>
 </div>
+<!-- CSS -->
+<style media="screen">
+  /* troca a ordem das divs */
+div#primeiro    {order: 2;}
+div#ultimo      {order: 1;}
+  /* fim trocar ordem das div */
+</style>
 @endsection

@@ -52,5 +52,12 @@
         </table>
       </div>
   </div>
+<div class="row">
+  <div class="col-md-12">
+    <button type="button" id="voltar" class="btn btn-primary">
+      <i class="fas fa-arrow-left font-color-footer"></i>Voltar</button>
+    </div>
+</div>
+
 </div>
 @endsection

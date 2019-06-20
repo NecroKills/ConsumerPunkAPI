@@ -99,6 +99,11 @@
         "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Portuguese-Brasil.json"
       },
     });
+
+    // botão voltar da pagina de cadastro
+   $("#voltar").on("click", function(){
+       window.location.replace("/");
+   });
   });
 </script>
 </html>
