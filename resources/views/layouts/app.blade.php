@@ -86,7 +86,7 @@
     // Parametros de configuração da tabela
     $('#table_id').DataTable( {
       "responsive": true, //responsive ativo
-      "pageLength": 25,
+      "pageLength": 10,
       "searching": true,
       "lengthChange": false,
       "pagingType": "full_numbers",
