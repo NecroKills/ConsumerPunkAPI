@@ -36,7 +36,6 @@
         <table class="table table-bordered" id="table_id" width="100%" cellspacing="0">
           <thead class="bg-white">
             <tr>
-              <th>Id</th>
               <th>Name</th>
               <th>description</th>
             </tr>
@@ -44,7 +43,6 @@
           <tbody>
             @foreach ($beers as $beer)
             <tr>
-              <td> {{ $beer->id }} </td>
               <td><a href="/beer/{{ $beer->id }}">{{$beer->name}}</a></td>
               <td> {{ $beer->description }} </td>
             </tr>

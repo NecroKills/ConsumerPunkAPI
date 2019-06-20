@@ -1,12 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
 
 <div class="container-fluid">
-<div class="table-responsive">
-  <div class="row">
-    <div class="row"id="tabela">
+  <div class="table-responsive">
       <div class="col-md-12">
         <table class="table table-bordered" id="table_id" width="100%" cellspacing="0">
           <thead>
@@ -54,9 +51,6 @@
           </tbody>
         </table>
       </div>
-    </div>
   </div>
-</div>
-</div>
 </div>
 @endsection

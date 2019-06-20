@@ -31,7 +31,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'http://127.0.0.1:8000/home') }}
+                        {{ config('app.name', 'http://127.0.0.1:8000/') }}
                     </a>
                 </div>
 
