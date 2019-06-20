@@ -31,8 +31,12 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-      $registro = $this->userRepository->edit($id);
-      return view('user.perfil', compact('registro'));
+      if($id == auth()->user()->id){
+        $registro = $this->userRepository->edit($id);
+        return view('user.perfil', compact('registro'));
+      }else{
+        return redirect()->back()->with('alert','Você não possui permissão!');
+      }
     }
 
     /**
@@ -46,8 +50,7 @@ class UserController extends Controller
     {
       $dados = $request->all();
       $registro = $this->userRepository->update($id, $dados);
-
-      return view('beers.home', compact('registro'));
+      return back();
     }
 
     /**
