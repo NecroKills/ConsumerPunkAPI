@@ -19,3 +19,4 @@ Auth::routes();
 Route::get('/',['as'=>'beers.home', 'uses'=>'HomeController@index']);
 Route::get('/',['as'=>'beers.home', 'uses'=>'PunkController@index']);
 Route::get('beer/{id}',['as'=>'beers.beer', 'uses'=>'PunkController@show']);
+Route::get('beerName',['as'=>'beers.name', 'uses'=>'PunkController@beerName']);

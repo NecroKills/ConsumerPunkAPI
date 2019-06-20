@@ -32,4 +32,10 @@ class Beers
     return json_decode($response->getBody()->getContents());
   }
 
+  public function findName($name)
+  {
+    $response = $this->client->request('GET', "beers?beer_name={$name}", ['verify' => false]);
+    return json_decode($response->getBody()->getContents());
+  }
+
 }

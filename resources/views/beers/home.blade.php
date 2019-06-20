@@ -4,44 +4,36 @@
 <div class="container">
   <div class="row">
       <div class="col-md-12">
-          <div class="panel panel-default">
-              <div class="panel-heading">Dashboard Punk API</div>
-              <div class="panel-body">
-                <form class="" action="" method="get">
-                  {{ csrf_field() }}
-                  <!-- DADOS DE PESQUISA -->
-                  <div class="form-group row" >
-                    <label for="id" class="col-md-6 col-form-label">ID:
-                      <hr class="mt">
-                    </label>
-                    <div class="col-sm-6">
-                      <input type="text" class="form-control" name="id" id="id" maxlength="100">
-                    </div>
-                  </div>
-                  <div class="form-group row" >
-                    <label for="nome" class="col-md-6 col-form-label">Nome Cerveja:
-                      <hr class="mt">
-                    </label>
-                    <div class="col-sm-6">
-                      <input type="text" class="form-control" name="nome" id="nome" maxlength="100">
-                    </div>
-                  </div>
+        @if (session('alert'))
+            <div class="col-md-12 alert alert-danger alert-block">
+                {{ session('alert') }}
+            </div>
+        @endif
+        <div class="panel panel-default">
+          <div class="panel-heading bg-primary"><strong>FILTRO DE BUSCA - PUNK API</strong></div>
+          <div class="panel-body">
+            <form class="" action="{{route('beers.name')}}" method="get">
+              {{ csrf_field() }}
+              <!-- DADOS DE PESQUISA -->
+              <div class="form-group row" >
+                <label for="name" class="col-md-6 col-form-label">Nome da Cerveja:
+                  <hr class="mt">
+                </label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" name="name" id="name" maxlength="100">
                 </div>
-              <div class="panel-footer">
-                <button id="pesquisar" type="submit">
-                  Filtrar
-                  <i class="fas fa-search"></i>
-                </button>
               </div>
-              </form>
+              <button id="pesquisar" type="submit">Filtrar<i class="fas fa-search"></i></button>
+            </form>
           </div>
+        </div>
       </div>
   </div>
   <div class="row">
     <div class="row"id="tabela">
       <div class="col-md-12">
         <table class="table table-bordered" id="table_id" width="100%" cellspacing="0">
-          <thead>
+          <thead class="bg-primary">
             <tr>
               <th>Id</th>
               <th>Name</th>
