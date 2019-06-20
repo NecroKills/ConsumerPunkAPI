@@ -20,6 +20,7 @@ class PunkController extends Controller
    */
   public function __construct(Beers $beers)
   {
+    $this->middleware('auth');
     $this->beers = $beers;
   }
 
@@ -31,7 +32,7 @@ class PunkController extends Controller
     public function index()
     {
       $beers = $this->beers->all();
-      return view('home', compact('beers'));
+      return view('beers.home', compact('beers'));
     }
 
     /**
@@ -43,7 +44,7 @@ class PunkController extends Controller
     public function show($id)
     {
       $beer = $this->beers->find($id);
-      return view('beer', compact('beer'));
+      return view('beers.beer', compact('beer'));
     }
 
 }

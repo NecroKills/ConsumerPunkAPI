@@ -86,12 +86,11 @@
     // Parametros de configuração da tabela
     $('#table_id').DataTable( {
       "responsive": true, //responsive ativo
-      "pageLength": 50,
-      "searching": false,
+      "pageLength": 25,
+      "searching": true,
       "lengthChange": false,
       "pagingType": "full_numbers",
       "order":[],
-      "columnDefs": [{"orderable": false, "targets": [0,1,2,3,5] }],
       "bInfo" : false,
       "language": {
         "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Portuguese-Brasil.json"

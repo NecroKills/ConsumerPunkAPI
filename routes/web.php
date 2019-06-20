@@ -11,13 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/home','PunkController@index');
-Route::get('beer/{id}','PunkController@show')->name('informacao');
+Route::get('/',['as'=>'beers.home', 'uses'=>'HomeController@index']);
+Route::get('/',['as'=>'beers.home', 'uses'=>'PunkController@index']);
+Route::get('beer/{id}',['as'=>'beers.beer', 'uses'=>'PunkController@show']);
