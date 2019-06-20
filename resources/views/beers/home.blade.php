@@ -10,7 +10,7 @@
             </div>
         @endif
         <div class="panel panel-default">
-          <div class="panel-heading bg-primary"><strong>FILTRO DE BUSCA - PUNK API</strong></div>
+          <div class="panel-heading"><strong>FILTRO DE BUSCA - PUNK API</strong></div>
           <div class="panel-body">
             <form class="" action="{{route('beers.name')}}" method="get">
               {{ csrf_field() }}
@@ -20,7 +20,7 @@
                   <hr class="mt">
                 </label>
                 <div class="col-sm-6">
-                  <input type="text" class="form-control" name="name" id="name" maxlength="100">
+                  <input type="text" class="form-control" name="name" id="name" maxlength="100" required>
                 </div>
               </div>
               <button id="pesquisar" type="submit">Filtrar<i class="fas fa-search"></i></button>
@@ -33,7 +33,7 @@
     <div class="row"id="tabela">
       <div class="col-md-12">
         <table class="table table-bordered" id="table_id" width="100%" cellspacing="0">
-          <thead class="bg-primary">
+          <thead class="bg-white">
             <tr>
               <th>Id</th>
               <th>Name</th>
