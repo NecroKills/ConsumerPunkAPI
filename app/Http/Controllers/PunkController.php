@@ -26,7 +26,7 @@ class PunkController extends Controller
 
     /**
      * Display a listing of the resource.
-     *
+     * Faço a busca na função all no Repositories/Beers
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -37,7 +37,7 @@ class PunkController extends Controller
 
     /**
      * Display the specified resource.
-     *
+     * Recebo os dados e envio para a função find no Repositories/Beers
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -49,14 +49,32 @@ class PunkController extends Controller
 
     /**
      * Display the specified resource.
-     *
-     * @param  string  $name
+     * Recebo os dados e envio para a função all no Repositories/Beers
+     * @param  array  $request
      * @return \Illuminate\Http\Response
      */
     public function beerName(Request $request)
     {
-      $name = $request['name'];
+      $dados = $request->all();
+      $name = $dados['name'];
       $beer = $this->beers->findName($name);
+      if (!empty($beer)) {
+        return view('beers.beer', compact('beer'));
+      }else {
+        return redirect()->back()->with('alert','Nenhuma cerveja encontrada!');
+      }
+    }
+
+    /**
+     * Display the specified resource.
+     * Recebo os dados e envio para a função filter no Repositories/Beers
+     * @param  array  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function filtro(Request $request)
+    {
+      $dados = $request->all();
+      $beer = $this->beers->filter($dados);
       if (!empty($beer)) {
         return view('beers.beer', compact('beer'));
       }else {

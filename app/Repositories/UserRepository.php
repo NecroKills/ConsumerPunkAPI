@@ -21,14 +21,24 @@ class UserRepository
     $this->user = $user;
   }
 
+  /**
+   * Faço uma pesquisa na tabela User, buscando o usuario pelo ID
+   * @param  int  $id
+   * @return $registro retorna o registro para o UserController;
+   */
   public function edit($id)
   {
     $registro = $this->user->find($id);
 		return $registro;
   }
 
+  /**
+   * É realizado um update no User do parametro $id
+   * @param  int  $id
+   * @param  array  $dados
+   */
   public function update($id, $dados)
-  {    
+  {
     $registro = $this->user->find($id)->update($dados);
   }
 

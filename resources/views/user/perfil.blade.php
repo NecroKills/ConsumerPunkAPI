@@ -41,7 +41,7 @@
               <div class="row">
                 <div class="col-md-2" id="primeiro">
                   <button type="submit" class="btn btn-success">Atualizar</button>
-                </div>
+                </div>                
               </form>
               <div class="col-md-10" id="ultimo">
                 <button type="button" id="voltar" class="btn btn-primary">
