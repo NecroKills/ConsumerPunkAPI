@@ -39,24 +39,29 @@
             </div>
             <div class="panel-footer">
               <div class="row">
-                <div class="col-md-2" id="primeiro">
+                <div class="col-md-9 col-sm-6 primeiro">
                   <button type="submit" class="btn btn-success">Atualizar</button>
-                </div>                
+                </div>
               </form>
-              <div class="col-md-10" id="ultimo">
-                <button type="button" id="voltar" class="btn btn-primary">
-                  <i class="fas fa-arrow-left font-color-footer"></i>Voltar</button>
+                <div class="col-md-3 col-sm-6 ultimo">
+                  <button type="button" id="voltar" class="btn btn-primary"></i>Voltar</button>
                 </div>
               </div>
             </div>
         </div>
       </div>
 </div>
+
 <!-- CSS -->
-<style media="screen">
-  /* troca a ordem das divs */
-div#primeiro    {order: 2;}
-div#ultimo      {order: 1;}
-  /* fim trocar ordem das div */
+<style>
+/* troca a ordem das divs */
+.primeiro {
+  order: 2;
+}
+.ultimo {
+  order: 1;
+}
+/* fim trocar ordem das div */
 </style>
+
 @endsection

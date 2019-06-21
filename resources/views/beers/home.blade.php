@@ -20,7 +20,7 @@
                   <!-- <hr class="mt"> -->
                 </label>
                 <div class="col-md-6 col-sm-6">
-                  <input type="text" class="form-control" name="name" id="name" maxlength="100" required>
+                  <input type="text" class="form-control" name="name" id="name" maxlength="100" required placeholder="Buzz">
                 </div>
                 <div class="col-md-1 col-sm-6">
                   <button type="submit" class="btn btn-success">buscar</button>
@@ -34,16 +34,20 @@
               <div class="form-group" >
                 <div class="row">
                   <div class="col-md-12">
-                    <p class="text">Para realizar uma pesquisa com filtro Selecione a caracteristica como: <strong>IBU, ABV ou EBC.</strong>
-                      <br>Depois selecione se deseja buscar um <strong>valor maior ou menor</strong> e por ultimo informe o <strong>valor.</strong>
-                      Por exemplo: <strong>IBU maior que 50.</strong>
+                    <p>Para realizar uma pesquisa com filtro, selecione a caracteristica como por exemplo: <strong>IBU maior que 50.</strong>
                     </p>
                   </div>
                 </div>
                 <div class="row">
-                  <label for="tipo1" class="col-md-4 col-form-label"><span class="required" style="color: red;">*</span> Selecione uma opção:</label>
-                  <label for="tipo2" class="col-md-4 col-form-label"><span class="required" style="color: red;">*</span> Selecione uma opção:</label>
-                  <label for="valor" class="col-md-4 col-form-label"><span class="required" style="color: red;">*</span> Valor:</label>
+                  <div class="col-md-4 col-sm-12 ">
+                    <label for="tipo1" class="col-form-label"><span class="required" style="color: red;">*</span> Selecione uma opção:</label>
+                  </div>
+                  <div class="col-md-4 col-sm-12 ">
+                    <label for="tipo2" class="col-form-label"><span class="required" style="color: red;">*</span> Selecione uma opção:</label>
+                  </div>
+                  <div class="col-md-4 col-sm-12 ">
+                    <label for="valor" class="col-form-label"><span class="required" style="color: red;">*</span> Valor:</label>
+                  </div>
                 </div>
                 <div class="row">
                   <div class="col-md-4 col-sm-6">
@@ -62,7 +66,7 @@
                     </select>
                   </div>
                   <div class="col-md-3 col-sm-6">
-                    <input type="text" class="form-control" name="valor" maxlength="100" required>
+                    <input type="text" class="form-control" name="valor" maxlength="100" required placeholder="50">
                   </div>
                   <div class="col-md-1 col-sm-6">
                     <button type="submit" class="btn btn-success">Filtrar</button>
@@ -76,11 +80,10 @@
   </div>
 
   <div class="row">
-    <p class="text"><strong>Clique no nome da cerveja para visualizar sua descrição completa!</strong>
-    </p>
     <div class="row"id="tabela">
       <div class="col-md-12">
         <table class="table table-bordered" id="table_id" width="100%" cellspacing="0">
+          <p class="text"><strong>Clique no nome da cerveja para visualizar sua descrição completa!</strong> </p>
           <thead class="bg-white">
             <tr>
               <th>Name</th>
