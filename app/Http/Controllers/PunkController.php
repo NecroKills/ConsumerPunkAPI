@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Repositories\Beers;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\BeersRequest;
 class PunkController extends Controller
 {
 
@@ -71,7 +71,7 @@ class PunkController extends Controller
      * @param  array  $request
      * @return \Illuminate\Http\Response
      */
-    public function filtro(Request $request)
+    public function filtro(BeersRequest $request)
     {
       $dados = $request->all();
       $beer = $this->beers->filter($dados);

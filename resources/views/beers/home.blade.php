@@ -5,10 +5,18 @@
   <div class="row">
       <div class="col-md-12">
         @if (session('alert'))
-            <div class="col-md-12 alert alert-danger alert-block">
-                {{ session('alert') }}
-            </div>
+          <div class="col-md-12 alert alert-danger alert-block">
+              {{ session('alert') }}
+          </div>
         @endif
+        @if(isset($errors) && count($errors) >0)
+          <div class="col-md-12 alert alert-danger alert-block">
+            @foreach($errors->all() as $error)
+              <p>{{$error}}</p>
+            @endforeach
+          </div>
+        @endif
+
         <div class="panel panel-default">
           <div class="panel-heading"><strong>FILTRO DE BUSCA - PUNK API</strong></div>
           <div class="panel-body">
@@ -40,10 +48,10 @@
                 </div>
                 <div class="row">
                   <div class="col-md-4 col-sm-12 ">
-                    <label for="tipo1" class="col-form-label"><span class="required" style="color: red;">*</span> Selecione uma opção:</label>
+                    <label for="tipo1" class="col-form-label"><span class="required" style="color: red;">*</span> Selecione a primeira opção:</label>
                   </div>
                   <div class="col-md-4 col-sm-12 ">
-                    <label for="tipo2" class="col-form-label"><span class="required" style="color: red;">*</span> Selecione uma opção:</label>
+                    <label for="tipo2" class="col-form-label"><span class="required" style="color: red;">*</span> Selecione a segunda opção:</label>
                   </div>
                   <div class="col-md-4 col-sm-12 ">
                     <label for="valor" class="col-form-label"><span class="required" style="color: red;">*</span> Valor:</label>
@@ -66,7 +74,7 @@
                     </select>
                   </div>
                   <div class="col-md-3 col-sm-6">
-                    <input type="text" class="form-control" name="valor" maxlength="100" required placeholder="50">
+                    <input type="text" class="form-control" name="valor" maxlength="100"  placeholder="50">
                   </div>
                   <div class="col-md-1 col-sm-6">
                     <button type="submit" class="btn btn-success">Filtrar</button>
